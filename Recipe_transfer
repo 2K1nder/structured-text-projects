@@ -1,0 +1,10 @@
+// StagedSetpoint=42. Copy StagedSetpoint into ActiveSetpoint.
+PROGRAM Main
+VAR
+    StagedSetpoint : INT := 42;
+    ActiveSetpoint : INT := 0;
+END_VAR
+ActiveSetpoint := StagedSetpoint;
+// Transfer the staged setpoint to the active register
+
+END_PROGRAM
