@@ -1,0 +1,16 @@
+PROGRAM Main
+VAR
+    bolt_left : BOOL;
+    bolt_right : BOOL;
+    door_release : BOOL;
+END_VAR
+
+// Prove both safety bolts home
+bolt_left := TRUE;
+bolt_right := TRUE;
+door_release := bolt_left and bolt_right;
+
+// Release the door only when BOTH are home
+// door_release := ???
+
+END_PROGRAM
