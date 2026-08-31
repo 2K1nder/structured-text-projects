@@ -1,0 +1,23 @@
+PROGRAM Main
+VAR
+    feedA : INT := 52;
+    feedB : INT := 89;
+    feedC : INT := 60;
+    additive : INT := 10;
+    charge_mass : INT;
+    final_mass : INT;
+    drums : INT;
+END_VAR
+charge_mass := (feedA + feedB + feedC);
+final_mass := charge_mass + additive;
+drums := final_mass / 2; 
+// Step 1: Total the three feeds
+// charge_mass := ???
+
+// Step 2: Add the additive
+// final_mass := ???
+
+// Step 3: Split into drums
+// drums := ???
+
+END_PROGRAM
