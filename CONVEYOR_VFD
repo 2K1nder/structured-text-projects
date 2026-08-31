@@ -1,0 +1,16 @@
+PROGRAM Main
+VAR
+    // Declare the drive dashboard tags
+    DriveSpeed : INT;
+    MotorLoad : INT;
+    ShaftRPM : INT;
+END_VAR
+DriveSpeed := 80;
+MotorLoad := 50;
+ShaftRPM:=2500;
+// Set the cruise operating point:
+// DriveSpeed = 80 %
+// MotorLoad  = 50 %
+// ShaftRPM   = 2500 rpm
+
+END_PROGRAM
