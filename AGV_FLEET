@@ -1,0 +1,39 @@
+PROGRAM Main
+VAR
+    // States: 0=IDLE, 1=MOVING, 2=TURNING, 3=OBSTACLE, 4=STOPPED
+    agv_state : INT := 0;
+    wall_detected : BOOL := FALSE;
+    path_clear : BOOL := TRUE;
+END_VAR
+
+// Drive the AGV state machine.
+// CASE shows the intent; the transitions are written with IF/ELSIF:
+CASE agv_state OF
+    0: 
+        if path_clear THEN
+            agv_state := 1;
+        end_if  
+    // IDLE — depart when the path is clear
+    1: 
+        if wall_detected THEN
+            agv_state := 3;
+        else
+            agv_state := 2;
+        end_if    
+    // MOVING — report an obstacle if a wall is seen
+    2:
+        if path_clear THEN
+            agv_state := 4;
+        end_if;
+    // TURNING — resume moving
+    3: agv_state:=0; 
+    // OBSTACLE — turn to find a new path
+    4:
+        agv_state := 0; 
+    // STOPPED — goal reached
+END_CASE;
+
+// Transition logic:
+// IF (agv_state = 0) AND path_clear THEN agv_state := 1; ...
+
+END_PROGRAM
