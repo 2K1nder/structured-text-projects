@@ -1,0 +1,17 @@
+PROGRAM Main
+VAR
+    entered_code : INT := 742;
+    secret_code : INT := 742;
+    entered_pin : INT := 9;
+    secret_pin : INT := 9;
+    entered_key : INT := 5;
+    secret_key : INT := 5;
+    trip_latched : BOOL := FALSE;
+    vault_open : BOOL := FALSE;
+END_VAR
+vault_open := (entered_code = secret_code) AND (entered_pin = secret_pin) AND (entered_key = secret_key) AND NOT trip_latched;
+
+// All three permissives must match AND no trip may be latched
+// vault_open := ???
+
+END_PROGRAM
