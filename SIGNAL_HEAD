@@ -1,0 +1,20 @@
+PROGRAM Main
+VAR
+    phase_timer : INT := 50;
+    stop_aspect : BOOL := FALSE;
+    caution_aspect : BOOL := FALSE;
+    proceed_aspect : BOOL := FALSE;
+END_VAR
+if phase_timer = 50 then
+    proceed_aspect := true;
+    caution_aspect := false;
+    stop_aspect := false;
+end_if
+// Drive the signal aspect from the phase timer:
+// 0-29:  STOP    (red)
+// 30-39: CAUTION (amber)
+// 40-69: PROCEED (green)
+// 70-79: CAUTION (amber)
+// 80-90: STOP    (red)
+
+END_PROGRAM
