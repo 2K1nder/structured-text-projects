@@ -1,0 +1,9 @@
+PROGRAM Main
+VAR
+    PartsTotal : INT := 99;
+END_VAR
+
+PartsTotal := 0;
+// Reset the totalizer to 0
+
+END_PROGRAM
