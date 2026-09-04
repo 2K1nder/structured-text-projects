@@ -1,0 +1,9 @@
+// Observe the simulation, then write your ST code
+
+VAR
+    T1 : ton;
+    T2 : ton;
+    Light_out : bool := false;
+END_VAR
+T1:=(IN:=Light_out, PT:=T#1s);
+T2:=(IN:=not Light_out, PT:=T#1s);
